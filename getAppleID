@@ -1,0 +1,4 @@
+#!/bin/bash
+curuser=$(ls -l /dev/console | cut -d " " -f 4)
+AppleID=$(sudo -u $curuser defaults read MobileMeAccounts | grep AccountID | sed 's/.* = "\(.*\)";/\1/')
+echo "$AppleID"
